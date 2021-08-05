@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Users</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/users/{id}(id=${user.getId()})}" th:object="${user}">
+  <div>
+    <label>
+      Fist name:
+      <input type="text" th:field="*{firstName}" placeholder="Ivan">
+    </label>
+  </div>
+  <div>
+    <label>
+      Last name:
+      <input type="text" th:field="*{lastName}" placeholder="Ivanov">
+    </label>
+  </div>
+  <div>
+    <label>
+      Email:
+      <input type="email" th:field="*{email}" placeholder="mail@mail.com">
+    </label>
+  </div>
+  <div>
+    <button type="submit">Edit</button>
+  </div>
+</form>
+</body>
+</html>
